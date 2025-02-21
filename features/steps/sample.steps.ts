@@ -5,7 +5,9 @@ let browser: Browser;
 let page: Page;
 
 Given("I open the Google homepage", async function () {
-    browser = await chromium.launch({ headless: false });
+    // browser = await chromium.launch({ headless: false });
+    browser = await chromium.launch({ headless: true }); // Change from false to true
+
     page = await browser.newPage();
     await page.goto("https://www.google.com");
     // await page.locator('#L2AGLb > div').click();
